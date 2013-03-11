@@ -9,12 +9,12 @@ bundle install
 
 Run the specs by running
 
-In Windows
+Windows
 ```ruby
 run_specs.bat
 ```
 
-In Linux
+Linux
 ```ruby
 run_specs
 ```
