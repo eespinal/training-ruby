@@ -1,1 +1,1 @@
-rspec -f d .\spec
+rspec -f d ./spec
