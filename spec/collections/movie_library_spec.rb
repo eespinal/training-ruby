@@ -210,6 +210,19 @@ describe Training::MovieLibrary do
   describe '#sort_all_movies_by_studio_rating_and_year_published' do
     include_context 'searching_and_sorting_concerns'
 
+    # Studio Ratings (highest to lowest)
+    # MGM
+    # Pixar
+    # Dreamworks
+    # Universal
+    # Disney
+
+    # should return a set of results 
+    # in the collection sorted by the rating of the production studio (not the movie rating) and year published. for this exercise you need to take the studio ratings
+    # into effect, which means that you first have to sort by movie studio (taking the ranking into account) and then by the
+    # year published. For this test you cannot add any extra properties/fields to either the ProductionStudio or
+    # Movie classes.
+
     subject { @sut.sort_all_movies_by_studio_rating_and_year_published }
 
     it { should == [@the_ring, @theres_something_about_mary, @a_bugs_life, @cars, @shrek, @indiana_jones_and_the_temple_of_doom, @pirates_of_the_carribean] }
