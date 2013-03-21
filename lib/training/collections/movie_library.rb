@@ -13,6 +13,9 @@ module Training
     def add(movie)
     end
 
+    def movie_collection_has?(movie)
+    end
+
     def length
     end
 

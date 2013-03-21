@@ -12,8 +12,8 @@ describe Training::MovieLibrary do
   describe '#length' do
 
     before do
-      movie1 = double('movie')
-      movie2 = double('movie')
+      movie1 = Mock.for_movie('movie1')
+      movie2 = Mock.for_movie('movie2')
       @sut.add_all(movie1, movie2)
     end
 
@@ -25,8 +25,8 @@ describe Training::MovieLibrary do
 
   describe '#all_movies' do
 
-    let(:first_movie) { double('movie') }
-    let(:second_movie) { double('movie') }
+    let(:first_movie) { Mock.for_movie('first_movie') }
+    let(:second_movie) { Mock.for_movie('second_movie') }
 
     before { @sut.add_all(first_movie, second_movie) }
 
@@ -39,7 +39,7 @@ describe Training::MovieLibrary do
   end
 
   describe '#add' do
-    let(:movie) { 'movie1' }
+    let(:movie) { Mock.for_movie('movie1') }
 
     context 'when the movie is not in the collection' do
 
@@ -71,8 +71,8 @@ describe Training::MovieLibrary do
 
     context 'when adding two different copies of the same movie' do
 
-      let(:speed_racer) { double('movie', :title => 'speed_racer') }
-      let(:another_copy_of_speed_racer) { double('movie', :title => 'speed_racer') }
+      let(:speed_racer) { Mock.for_movie('speed_racer') }
+      let(:another_copy_of_speed_racer) { Mock.for_movie('speed_racer') }
 
       before do
         @sut.movie_collection << speed_racer
