@@ -11,8 +11,12 @@ module Training
       @rating = rating
     end
 
+    def published_between?(start_year, end_year)
+      date_published.year >= start_year && date_published.year <= end_year
+    end
+
     def to_s
-      "#{title} (#{date_published}) - #{genre} | #{production_studio}"
+      "#{title} (#{date_published.year}) - #{genre} | #{production_studio}"
     end
 
     def ==(other)
